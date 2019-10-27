@@ -76,13 +76,17 @@ WSGI_APPLICATION = 'Employee_Management_App.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+wsp_db_host = os.environ.get('WSP_DB_HOST', 'localhost')
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'Employee_Management_App',
+        'USER': 'postgres',
+        'PASSWORD': 'qwerty12345',
+        'HOST': wsp_db_host,
+        'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
