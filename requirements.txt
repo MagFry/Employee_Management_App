@@ -5,3 +5,6 @@ psycopg2
 requests
 django-cors-headers
 django-rest-knox
+gunicorn
+whitenoise
+dj-database-url
