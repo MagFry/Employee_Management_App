@@ -6,3 +6,5 @@ docker/src
 src/
 .pycharm
 media/*.jpg
+*.log
+*.pot
