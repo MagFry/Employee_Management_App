@@ -5,5 +5,5 @@ from . import views
 app_name = 'emp'
 
 urlpatterns = [
-    url(r'^index/', views.index, name='index'),
+    url(r'^api/employees', views.employees_list_all, name='index'),
 ]
