@@ -8,3 +8,4 @@ src/
 media/*.jpg
 *.log
 *.pot
+node_modules/*
