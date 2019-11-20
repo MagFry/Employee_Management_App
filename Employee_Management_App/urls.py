@@ -17,12 +17,20 @@ from django.contrib import admin
 from django.conf.urls import include, url
 from django.urls import path
 from rest_framework import routers
-
+"""
 router = routers.DefaultRouter()
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    #url('', include('frontend.urls')),
     path('', include(router.urls)),
+    url(r'^admin/', admin.site.urls),
+    url('', include('frontend.urls')),
+    path('', include('Employees.urls')),
+]
+"""
+
+
+
+urlpatterns = [
+    path('', include('frontend.urls')),
     path('', include('Employees.urls')),
 ]

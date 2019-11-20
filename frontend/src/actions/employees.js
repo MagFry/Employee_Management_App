@@ -6,7 +6,7 @@ import {GET_EMPLOYEES} from "./types";
 
 export const getEmployees = () => dispatch => {
     axios
-        .get('/api/employees/')
+        .get("/api/employees/")
         .then(res => {
             dispatch({
                 type: GET_EMPLOYEES,

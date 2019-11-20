@@ -4,5 +4,5 @@ from django.conf.urls import include, url
 
 
 urlpatterns = [
-    url('', views.index)
+    path('', views.index)
 ]
