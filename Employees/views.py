@@ -4,6 +4,7 @@ from rest_framework.parsers import JSONParser
 from django.shortcuts import render
 from .models import Employee
 from .serializers import EmployeeSerializer
+import requests
 
 
 @csrf_exempt
@@ -25,4 +26,4 @@ def add_employee(request):
         if serializer.is_valid():
             serializer.save()
             return JsonResponse(serializer.data, status=201, safe=False)
-        return JsonResponse(request, status=400)
+        return JsonResponse(request, status=400, safe=False)
