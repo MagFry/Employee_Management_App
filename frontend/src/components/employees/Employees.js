@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import {getEmployees} from "../../actions/employees";
+import {getEmployees, deleteEmployee} from "../../actions/employees";
 
 
 export class Employees extends Component {
@@ -35,7 +35,11 @@ export class Employees extends Component {
                             <td>{employee.surname}</td>
                             <td>{employee.email}</td>
                             <td>
-                                <button className="btn btn-danger btn-sm">Delete
+                                <button onClick={this.props.deleteEmployee.bind
+                                (this,employee.employee_id)}
+                                        className="btn btn-danger btn-sm">
+                                    {" "}
+                                    Delete
                                 </button>
                             </td>
                         </tr>
@@ -52,4 +56,4 @@ const mapStateToProps = state => ({
     employees: state.employees.employees
 });
 
-export default connect(mapStateToProps, {getEmployees})(Employees);
+export default connect(mapStateToProps, {getEmployees, deleteEmployee})(Employees);

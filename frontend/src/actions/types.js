@@ -1,1 +1,2 @@
 export const GET_EMPLOYEES = "GET_EMPLOYEES";
+export const DELETE_EMPLOYEE = "DELETE_EMPLOYEE";

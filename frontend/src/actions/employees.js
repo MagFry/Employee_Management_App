@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import {GET_EMPLOYEES} from "./types";
+import {GET_EMPLOYEES, DELETE_EMPLOYEE} from "./types";
 
 //GET EMPLOYEES
 
@@ -11,6 +11,20 @@ export const getEmployees = () => dispatch => {
             dispatch({
                 type: GET_EMPLOYEES,
                 payload: res.data
+            });
+
+        })
+        .catch(err => console.log(err));
+};
+
+//DELETE EMPLOYEES
+export const deleteEmployee = (employee_id) => dispatch => {
+    axios
+        .delete(`/api/employees/${employee_id}`)
+        .then(res => {
+            dispatch({
+                type: DELETE_EMPLOYEE,
+                payload: employee_id
             });
 
         })

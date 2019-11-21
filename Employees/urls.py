@@ -10,6 +10,8 @@ urlpatterns = [
     path('api/employees', views.add_employee),
     # Showing all employees
     path('api/employees/all', views.employees_list_all),
+    # Removing or updating employee
+    path('api/employees/<int:pk>', views.employees_detail),
 ]
 """
 
