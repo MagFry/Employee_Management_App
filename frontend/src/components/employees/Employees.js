@@ -29,8 +29,8 @@ export class Employees extends Component {
                     </thead>
                     <tbody>
                     {this.props.employees.map(employee => (
-                        <tr key={employee.id}>
-                            <td>{employee.id}</td>
+                        <tr key={employee.employee_id}>
+                            <td>{employee.employee_id}</td>
                             <td>{employee.name}</td>
                             <td>{employee.surname}</td>
                             <td>{employee.email}</td>
