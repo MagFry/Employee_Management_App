@@ -1,3 +1,4 @@
+"""
 from .models import Employee
 from rest_framework import viewsets, permissions
 from .serializers import EmployeeSerializer
@@ -11,3 +12,4 @@ class EmployeeViewSet(viewsets.ModelViewSet):
         permissions.AllowAny
     ]
     serializer_class = EmployeeSerializer
+ """
