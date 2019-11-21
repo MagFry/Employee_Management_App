@@ -7,3 +7,6 @@ media/*.jpg
 *.log
 *.pot
 node_modules/*
+.env
+db.sqlite3
+Employees/migrations/0002_auto_20191121_1825.py
