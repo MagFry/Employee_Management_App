@@ -6,7 +6,10 @@ import {getEmployees, deleteEmployee} from "../../actions/employees";
 
 export class Employees extends Component {
     static propTypes = {
-        employees: PropTypes.array.isRequired
+        employees: PropTypes.array.isRequired,
+        getEmployees: PropTypes.func.isRequired,
+        deleteEmployee: PropTypes.func.isRequired
+
     };
 
     componentDidMount() {
