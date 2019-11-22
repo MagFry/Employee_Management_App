@@ -13,7 +13,7 @@ class Form extends Component {
 
     static propTypes = {
         addEmployee: PropTypes.func.isRequired
-    }
+    };
 
     onChange = e => this.setState({[e.target.name]:e.target.value});
 
@@ -22,7 +22,8 @@ class Form extends Component {
         const {employee_id, name, surname, email} = this.state;
         const employee = {employee_id, name, surname, email};
         this.props.addEmployee(employee);
-    }
+    };
+
 
     render() {
         const {employee_id,name,surname,email} = this.state;
@@ -61,7 +62,7 @@ class Form extends Component {
                         />
                     </div>
                     <div className="form-group">
-                        <button type="submit" className="btn btn-primary">
+                        <button type="submit" className="btn btn-danger btn-sm">
                             Submit
                         </button>
                     </div>

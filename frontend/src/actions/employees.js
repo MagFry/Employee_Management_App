@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import {GET_EMPLOYEES, DELETE_EMPLOYEE, ADD_EMPLOYEE} from "./types";
+import {GET_EMPLOYEES, DELETE_EMPLOYEE, ADD_EMPLOYEE, EDIT_EMPLOYEE} from "./types";
 
 //GET EMPLOYEES
 export const getEmployees = () => dispatch => {
@@ -38,6 +38,20 @@ export const addEmployee = (employee) => dispatch => {
             dispatch({
                 type: ADD_EMPLOYEE,
                 payload: res.data
+            });
+
+        })
+        .catch(err => console.log(err));
+};
+
+//EDIT EEMPLOYEE
+export const editEmployee = (employee_id) => dispatch => {
+    axios
+        .patch(`/api/employees/${employee_id}`)
+        .then(res => {
+            dispatch({
+                type: EDIT_EMPLOYEE,
+                payload: employee_id
             });
 
         })
