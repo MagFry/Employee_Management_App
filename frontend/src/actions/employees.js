@@ -1,6 +1,7 @@
 import axios from 'axios';
+import {createMessage} from "./messages";
 
-import {GET_EMPLOYEES, DELETE_EMPLOYEE, ADD_EMPLOYEE, EDIT_EMPLOYEE} from "./types";
+import {GET_EMPLOYEES, DELETE_EMPLOYEE, ADD_EMPLOYEE, EDIT_EMPLOYEE, GET_ERRORS} from "./types";
 
 //GET EMPLOYEES
 export const getEmployees = () => dispatch => {
@@ -21,6 +22,7 @@ export const deleteEmployee = (employee_id) => dispatch => {
     axios
         .delete(`/api/employees/${employee_id}`)
         .then(res => {
+            dispatch(createMessage({deleteEmployee: 'Employee Deleted'}));
             dispatch({
                 type: DELETE_EMPLOYEE,
                 payload: employee_id
@@ -35,13 +37,23 @@ export const addEmployee = (employee) => dispatch => {
     axios
         .post("/api/employees", employee)
         .then(res => {
+            dispatch(createMessage({addEmployee: 'Employee Added'}));
             dispatch({
                 type: ADD_EMPLOYEE,
                 payload: res.data
             });
 
         })
-        .catch(err => console.log(err));
+        .catch(err =>{
+            const errors = {
+                msg: err.response.data,
+                status: err.response.status
+            };
+            dispatch({
+                type: GET_ERRORS,
+                payload: errors
+            });
+        } );
 };
 
 //EDIT EEMPLOYEE

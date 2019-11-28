@@ -22,6 +22,11 @@ class Form extends Component {
         const {employee_id, name, surname, email} = this.state;
         const employee = {employee_id, name, surname, email};
         this.props.addEmployee(employee);
+        this.setState({
+            name: "",
+            surname:"",
+            email:""
+        });
     };
 
 
