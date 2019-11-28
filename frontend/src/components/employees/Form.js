@@ -29,7 +29,7 @@ class Form extends Component {
         const {employee_id,name,surname,email} = this.state;
         return (
             <div className="card card-body mt-4 mb-4">
-                <h2>Add Lead</h2>
+                <h2>Add Employee</h2>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label>Name</label>
