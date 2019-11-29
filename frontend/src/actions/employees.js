@@ -6,7 +6,7 @@ import {GET_EMPLOYEES, DELETE_EMPLOYEE, ADD_EMPLOYEE, EDIT_EMPLOYEE, GET_ERRORS}
 //GET EMPLOYEES
 export const getEmployees = () => dispatch => {
     axios
-        .get("/api/employees/all")
+        .get("/api/employees/")
         .then(res => {
             dispatch({
                 type: GET_EMPLOYEES,
@@ -20,7 +20,7 @@ export const getEmployees = () => dispatch => {
 //DELETE EMPLOYEE
 export const deleteEmployee = (employee_id) => dispatch => {
     axios
-        .delete(`/api/employees/${employee_id}`)
+        .delete(`/api/employees/${employee_id}/`)
         .then(res => {
             dispatch(createMessage({deleteEmployee: 'Employee Deleted'}));
             dispatch({
@@ -35,7 +35,7 @@ export const deleteEmployee = (employee_id) => dispatch => {
 //ADD EEMPLOYEE
 export const addEmployee = (employee) => dispatch => {
     axios
-        .post("/api/employees", employee)
+        .post("/api/employees/", employee)
         .then(res => {
             dispatch(createMessage({addEmployee: 'Employee Added'}));
             dispatch({
@@ -59,7 +59,7 @@ export const addEmployee = (employee) => dispatch => {
 //EDIT EEMPLOYEE
 export const editEmployee = (employee_id) => dispatch => {
     axios
-        .patch(`/api/employees/${employee_id}`)
+        .patch(`/api/employees/${employee_id}/`)
         .then(res => {
             dispatch({
                 type: EDIT_EMPLOYEE,
