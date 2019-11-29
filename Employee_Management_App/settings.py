@@ -47,7 +47,14 @@ INSTALLED_APPS = [
     'Employees.apps.EmployeesConfig',
     'whitenoise.runserver_nostatic',
     'frontend',
+    'knox',
+    'Departments'
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',)
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
