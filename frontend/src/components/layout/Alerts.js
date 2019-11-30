@@ -12,18 +12,22 @@ export class Alerts extends Component {
   componentDidUpdate(prevProps) {
     const { error, alert, message } = this.props;
     if (error !== prevProps.error) {
-      alert.error("There is an error. Please fill all the data correctly");
+      if (error.msg.name) alert.error(`Name: ${error.msg.name.join()}`);
+      if (error.msg.surname) alert.error(`Name: ${error.msg.surname.join()}`);
+      if (error.msg.email) alert.error(`Email: ${error.msg.email.join()}`);
+      if (error.msg.message)
+        alert.error(`Message: ${error.msg.message.join()}`);
+      if (error.msg.non_field_errors)
+        alert.error(error.msg.non_field_errors.join());
+      if (error.msg.username) alert.error(error.msg.username.join());
     }
 
-    if(message !== prevProps.message) {
-        if (message.deleteEmployee) alert.success
-        (message.deleteEmployee);
-        if (message.addEmployee) alert.success
-        (message.addEmployee);
+    if (message !== prevProps.message) {
+      if (message.deleteEmployee) alert.success(message.deleteLead);
+      if (message.addEmployee) alert.success(message.addLead);
+      if (message.passwordNotMatch) alert.error(message.passwordNotMatch);
     }
-
   }
-
   render() {
     return <Fragment />;
   }
