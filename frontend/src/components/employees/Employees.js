@@ -90,10 +90,10 @@ export class Employees extends Component {
                             <td>{employee.surname}</td>
                             <td>{employee.email}</td>
                             <td>
-                                <button onClick={this.openModal}
-                                        className="btn btn-danger btn-sm">
-                                    Update
-                                </button>
+                                {/*<button onClick={this.openModal}*/}
+                                        {/*className="btn btn-danger btn-sm">*/}
+                                    {/*Update*/}
+                                {/*</button>*/}
                                 <Modal
                                     isOpen={this.state.modalIsOpen}
                                     onAfterOpen={this.afterOpenModal}
