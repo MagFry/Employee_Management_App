@@ -35,9 +35,9 @@ Departments
 + https://emp-app-prod.herokuapp.com/#/login - Login page
 + https://emp-app-prod.herokuapp.com/#/register - Register page 
 
-##Examples in Postman
+## Examples in Postman
 
-###Login department 
+### Login department 
 +  POST https://emp-app-prod.herokuapp.com/api/auth/login
 + Headers: Content-type -> application/json
 ```    
@@ -58,7 +58,7 @@ Departments
 }
 ``` 
 
-###Checking token and loading department
+### Checking token and loading department
 + GET https://emp-app-prod.herokuapp.com/api/auth/department
 + Headers: Authorization -> Token TOKEN_PARA
 + output
@@ -70,7 +70,7 @@ Departments
 }
 ```
 
-###Listing employees of given department using its valid token
+### Listing employees of given department using its valid token
 + GET https://emp-app-prod.herokuapp.com/api/employees/
 + Headers: Authorization -> Token TOKEN_PARA
 + output
@@ -95,7 +95,7 @@ Departments
 ]
 ```
 
-###Adding employee
+### Adding employee
 + POST https://emp-app-prod.herokuapp.com/api/employees/
 + Headers: Authorization -> Token TOKEN_PARA
 + Headers: Content-type -> application/json
