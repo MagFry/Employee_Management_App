@@ -19,7 +19,7 @@ export const loadDepartment = () => (dispatch, getState) => {
   dispatch({ type: DEPARTMENT_LOADING });
 
   axios
-    .get("/api/auth/user", tokenConfig(getState))
+    .get("/api/auth/department", tokenConfig(getState))
     .then(res => {
       dispatch({
         type: DEPARTMENT_LOADED,
@@ -62,7 +62,7 @@ export const login = (username, password) => dispatch => {
     });
 };
 
-// REGISTER USER
+// REGISTER DEPARTMENT
 export const register = ({ username, password, email }) => dispatch => {
   // Headers
   const config = {
