@@ -22,7 +22,6 @@ Employees
 + **GET** https://emp-app-prod.herokuapp.com/api/employees/ - List all employees for authorized department 
 + **POST** https://emp-app-prod.herokuapp.com/api/employees/ - Add new employee to the list of employees of authorized department 
 + **DELETE** https://emp-app-prod.herokuapp.com/api/employees/{employee_id} - Remove employee of given employee_id from the list of department employees
-+ **PUT** https://emp-app-prod.herokuapp.com/api/employees/{employee_id} - Update employee of given employee_id from the list of department employees
 
 Departments
 + **POST** https://emp-app-prod.herokuapp.com/api/auth/register - Creating a new department with token used for authorization
