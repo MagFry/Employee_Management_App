@@ -105,7 +105,7 @@ Departments
         "email": "walasy@gmail.com"
     }
 ```
-+output
++ output
 ```
 {
     "employee_id": 7,
@@ -170,4 +170,27 @@ Departments
         "owner": 1
     }
 ]
+```
+
+### Registering department 
++ POST https://emp-app-prod.herokuapp.com/api/auth/register
++ Headers: Content-type -> application/json
+```
+{
+	"username": "department04",
+	"email": "department03@gmail.com",
+	"password": "department04",
+	"token": "AuthToken.objects.create(user)"
+}
+```
++ output
+```
+{
+    "user": {
+        "id": 4,
+        "username": "department04",
+        "email": "department03@gmail.com"
+    },
+    "token": "TOKEN_PARA"
+}
 ```
