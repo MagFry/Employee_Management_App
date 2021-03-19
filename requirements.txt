@@ -8,7 +8,7 @@ django-cors-headers==3.1.1
 django-heroku==0.3.1
 django-react-templatetags==5.4.0
 django-rest-knox==4.1.0
-djangorestframework==3.10.3
+djangorestframework==3.11.2
 gunicorn==19.9.0
 idna==2.8
 psycopg2==2.8.4
